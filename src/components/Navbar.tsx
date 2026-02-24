@@ -8,6 +8,7 @@ const navLinks = [
   { to: "/about", label: "About" },
   { to: "/philosophy", label: "Philosophy" },
   { to: "/work-with-me", label: "Work With Me" },
+  { to: "/clients", label: "Clients" },
   { to: "/insights", label: "Insights" },
   { to: "/contact", label: "Contact" },
 ];

@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import FadeIn from "@/components/FadeIn";
+import GalleryHero from "@/components/GalleryHero";
 import heroImage from "@/assets/hero-image.jpg";
 
 const principles = [
@@ -91,8 +92,11 @@ const Index = () => {
         </FadeIn>
       </section>
 
+      {/* Gallery */}
+      <GalleryHero />
+
       {/* Principles */}
-      <section className="section-padding bg-secondary/40">
+      <section className="section-padding bg-background">
         <div className="max-w-7xl mx-auto">
           <FadeIn>
             <h2 className="font-heading text-3xl md:text-4xl text-foreground mb-4">
