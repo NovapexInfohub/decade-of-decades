@@ -56,7 +56,7 @@ const Index = () => {
       <section className="section-padding bg-background">
         <div className="max-w-7xl mx-auto">
           <FadeIn>
-            <h2 className="font-heading text-3xl md:text-4xl text-foreground mb-4">
+            <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl text-foreground mb-4">
               The Six Principles
             </h2>
             <p className="text-muted-foreground mb-14 max-w-lg">
