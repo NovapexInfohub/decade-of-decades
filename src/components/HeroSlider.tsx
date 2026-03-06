@@ -52,7 +52,7 @@ const HeroSlider = () => {
   const slide = slides[current];
 
   return (
-    <section className="relative w-full min-h-[90vh] overflow-hidden bg-secondary">
+    <section className="relative w-full min-h-[100svh] md:min-h-[90vh] overflow-hidden bg-secondary">
       <AnimatePresence mode="wait">
         <motion.div
           key={current}
