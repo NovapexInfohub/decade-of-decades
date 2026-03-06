@@ -52,7 +52,7 @@ const HeroSlider = () => {
   const slide = slides[current];
 
   return (
-    <section className="relative w-full aspect-[16/7] md:aspect-[16/6] overflow-hidden bg-secondary">
+    <section className="relative w-full min-h-[90vh] overflow-hidden bg-secondary">
       <AnimatePresence mode="wait">
         <motion.div
           key={current}
@@ -79,22 +79,51 @@ const HeroSlider = () => {
               className="w-full h-full object-cover"
             />
           )}
-          {/* Gradient overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-background/20" />
+          <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/40 to-background/30" />
         </motion.div>
       </AnimatePresence>
 
+      {/* Headline overlay */}
+      <div className="absolute inset-0 z-10 flex items-center">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 w-full">
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+            className="max-w-2xl"
+          >
+            <h1 className="font-heading text-5xl md:text-7xl text-primary-foreground leading-[1.1] mb-6">
+              Stronger Every Decade
+            </h1>
+            <p className="text-lg md:text-xl text-primary-foreground/80 leading-relaxed mb-4 max-w-lg">
+              Training for strength, mobility, and longevity — not just today, but for life.
+            </p>
+            <p className="text-sm text-primary-foreground/60 mb-10 font-medium tracking-wide">
+              With Shantanu · Longevity-focused strength & movement coaching
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <a
+                href="/work-with-me"
+                className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-primary-foreground text-primary font-medium text-sm rounded-sm hover:bg-primary-foreground/90 transition-colors"
+              >
+                Work With Me
+              </a>
+              <a
+                href="/philosophy"
+                className="inline-flex items-center justify-center gap-2 px-8 py-3.5 border border-primary-foreground/30 text-primary-foreground font-medium text-sm rounded-sm hover:bg-primary-foreground/10 transition-colors"
+              >
+                Explore the Philosophy
+              </a>
+            </div>
+          </motion.div>
+        </div>
+      </div>
+
       {/* Controls */}
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex items-center gap-4 z-10">
-        <button
-          onClick={prev}
-          aria-label="Previous slide"
-          className="p-2 rounded-full bg-background/60 backdrop-blur-sm text-foreground hover:bg-background/80 transition-colors"
-        >
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-4 z-20">
+        <button onClick={prev} aria-label="Previous slide" className="p-2 rounded-full bg-background/60 backdrop-blur-sm text-foreground hover:bg-background/80 transition-colors">
           <ChevronLeft size={20} />
         </button>
-
-        {/* Dots */}
         <div className="flex items-center gap-2">
           {slides.map((s, i) => (
             <button
@@ -102,33 +131,21 @@ const HeroSlider = () => {
               onClick={() => setCurrent(i)}
               aria-label={`Go to slide ${i + 1}`}
               className={`transition-all duration-300 rounded-full ${
-                i === current
-                  ? "w-6 h-2 bg-primary"
-                  : "w-2 h-2 bg-foreground/30 hover:bg-foreground/50"
+                i === current ? "w-6 h-2 bg-primary" : "w-2 h-2 bg-foreground/30 hover:bg-foreground/50"
               }`}
             />
           ))}
         </div>
-
-        <button
-          onClick={next}
-          aria-label="Next slide"
-          className="p-2 rounded-full bg-background/60 backdrop-blur-sm text-foreground hover:bg-background/80 transition-colors"
-        >
+        <button onClick={next} aria-label="Next slide" className="p-2 rounded-full bg-background/60 backdrop-blur-sm text-foreground hover:bg-background/80 transition-colors">
           <ChevronRight size={20} />
         </button>
-
-        <button
-          onClick={() => setPaused((p) => !p)}
-          aria-label={paused ? "Play" : "Pause"}
-          className="p-2 rounded-full bg-background/60 backdrop-blur-sm text-foreground hover:bg-background/80 transition-colors"
-        >
+        <button onClick={() => setPaused((p) => !p)} aria-label={paused ? "Play" : "Pause"} className="p-2 rounded-full bg-background/60 backdrop-blur-sm text-foreground hover:bg-background/80 transition-colors">
           {paused ? <Play size={16} /> : <Pause size={16} />}
         </button>
       </div>
 
       {/* Slide label */}
-      <div className="absolute bottom-6 right-6 z-10">
+      <div className="absolute bottom-8 right-6 z-20">
         <span className="text-xs font-medium text-foreground/70 bg-background/50 backdrop-blur-sm px-3 py-1 rounded-full">
           {slide.type === "video" ? "▶ Video" : "Photo"} · {current + 1}/{slides.length}
         </span>
