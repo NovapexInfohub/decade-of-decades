@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import FadeIn from "@/components/FadeIn";
 import GalleryHero from "@/components/GalleryHero";
+import HeroSlider from "@/components/HeroSlider";
 import heroImage from "@/assets/hero-image.jpg";
 
 const principles = [
