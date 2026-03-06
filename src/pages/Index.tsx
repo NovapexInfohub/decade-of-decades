@@ -1,10 +1,8 @@
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import FadeIn from "@/components/FadeIn";
 import GalleryHero from "@/components/GalleryHero";
 import HeroSlider from "@/components/HeroSlider";
-import heroImage from "@/assets/hero-image.jpg";
 
 const principles = [
   {
@@ -36,50 +34,8 @@ const principles = [
 const Index = () => {
   return (
     <>
-      {/* Hero */}
-      <section className="relative min-h-[90vh] flex items-center overflow-hidden">
-        <div className="absolute inset-0">
-          <img
-            src={heroImage}
-            alt="Functional movement in natural light"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0" style={{ background: "var(--hero-overlay)" }} />
-        </div>
-        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 py-24">
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-            className="max-w-2xl"
-          >
-            <h1 className="font-heading text-5xl md:text-7xl text-primary-foreground leading-[1.1] mb-6">
-              Stronger Every Decade
-            </h1>
-            <p className="text-lg md:text-xl text-primary-foreground/80 leading-relaxed mb-4 max-w-lg">
-              Training for strength, mobility, and longevity — not just today, but for life.
-            </p>
-            <p className="text-sm text-primary-foreground/60 mb-10 font-medium tracking-wide">
-              With Shantanu · Longevity-focused strength & movement coaching
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link
-                to="/work-with-me"
-                className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-primary-foreground text-primary font-medium text-sm rounded-sm hover:bg-primary-foreground/90 transition-colors"
-              >
-                Work With Me
-                <ArrowRight size={16} />
-              </Link>
-              <Link
-                to="/philosophy"
-                className="inline-flex items-center justify-center gap-2 px-8 py-3.5 border border-primary-foreground/30 text-primary-foreground font-medium text-sm rounded-sm hover:bg-primary-foreground/10 transition-colors"
-              >
-                Explore the Philosophy
-              </Link>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      {/* Hero Slider */}
+      <HeroSlider />
 
       {/* Tagline */}
       <section className="section-padding bg-background">
@@ -92,9 +48,6 @@ const Index = () => {
           </p>
         </FadeIn>
       </section>
-
-      {/* Image & Video Slider */}
-      <HeroSlider />
 
       {/* Gallery */}
       <GalleryHero />
