@@ -40,7 +40,7 @@ const Index = () => {
       {/* Tagline */}
       <section className="section-padding bg-background">
         <FadeIn className="max-w-3xl mx-auto text-center">
-          <p className="font-heading text-2xl md:text-3xl text-foreground leading-relaxed">
+          <p className="font-heading text-xl sm:text-2xl md:text-3xl text-foreground leading-relaxed">
             A well-trained body should become more capable with age, not less.
           </p>
           <p className="mt-6 text-muted-foreground leading-relaxed max-w-xl mx-auto">
