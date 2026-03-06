@@ -93,6 +93,9 @@ const Index = () => {
         </FadeIn>
       </section>
 
+      {/* Image & Video Slider */}
+      <HeroSlider />
+
       {/* Gallery */}
       <GalleryHero />
 
