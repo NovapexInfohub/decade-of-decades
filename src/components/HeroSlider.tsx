@@ -85,7 +85,7 @@ const HeroSlider = () => {
 
       {/* Headline overlay */}
       <div className="absolute inset-0 z-10 flex items-center">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12 w-full">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 w-full">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}

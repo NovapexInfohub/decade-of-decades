@@ -86,7 +86,7 @@ const Index = () => {
       {/* CTA */}
       <section className="section-padding bg-primary text-primary-foreground">
         <FadeIn className="max-w-3xl mx-auto text-center">
-          <h2 className="font-heading text-3xl md:text-4xl mb-6">
+          <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl mb-6">
             Train for function. Live with discipline.
           </h2>
           <p className="text-primary-foreground/70 mb-10 max-w-md mx-auto">

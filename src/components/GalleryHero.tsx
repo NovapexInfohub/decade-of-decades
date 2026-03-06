@@ -27,7 +27,7 @@ const GalleryHero = () => (
           Training in Motion
         </h2>
       </FadeIn>
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 auto-rows-[200px] md:auto-rows-[240px]">
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-2 sm:gap-3 md:gap-4 auto-rows-[160px] sm:auto-rows-[200px] md:auto-rows-[240px]">
         {images.map((img, i) => (
           <motion.div
             key={img.alt}
